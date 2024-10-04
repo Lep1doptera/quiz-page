@@ -38,97 +38,118 @@ Concerns
 
 */
 
+//will hold questions
+const quizContainer = document.getElementById("quiz");
+//submit button for triggers
+const submitButton = document.getElementById("submit");
+//will hold checking and retrieving questions
+const resultsContainer = document.getElementById("results");
+
+//functionality
+function buildQuiz() {}
+
+function getAnwers() {}
+
+//call to show as we go
+buildQuiz();
 
 // Quiz Questions
 const myQuestions = [
-{
-  question: "What is the name of the main character in Alien",
-  answers: {
-    a:"Ellen Ripley",
-    b:"Pennywise",
-    c:"Freddy Krueger"
+  {
+    question: "What is the name of the main character in Alien",
+    answers: {
+      a: "Ellen Ripley",
+      b: "Pennywise",
+      c: "Freddy Krueger",
+    },
+    correctAnswer: "Ellen Ripley",
   },
-  correctAnswer: "Ellen Ripley"
-},
-{
-  question: "What year did the third Alien film release?",
-  answers: {
-    "1999",
-    "1992",
-    "1983"
+  {
+    question: "What year did the third Alien film release?",
+    answers: {
+      a: "1999",
+      b: "1992",
+      c: "1983",
+    },
+    correctAnswer: "1992",
   },
-  correctAnswer: "1992"
-},
-{
-  question: "What is the name of the ship in the first Alien film",
-  answers: {
-    "Serenity",
-    "Nostromo",
-    "Millennium Falcon"
+  {
+    question: "What is the name of the ship in the first Alien film",
+    answers: {
+      a: "Serenity",
+      b: "Nostromo",
+      c: "Millennium Falcon",
+    },
+    correctAnswer: "Nostromo",
   },
-  correctAnswer: "Nostromo"
-},
-{
-  question: "Complete this quote from Aliens; 'You know, Burke, I dont know which species is worse. You dont see them f*****g each other over for a goddamn _______.'",
-  answers: {
-    "Percentage",
-    "Snack",
-    "Profit"
+  {
+    question:
+      "Complete this quote from Aliens; 'You know, Burke, I dont know which species is worse. You dont see them f*****g each other over for a goddamn _______.'",
+    answers: {
+      a: "Percentage",
+      b: "Snack",
+      c: "Profit",
+    },
+    correctAnswer: "Percentage",
   },
-  correctAnswer: "Percentage"
-},
-{
-  question: "Who was the first to die in Alien",
-  answers: {
-    "Parker",
-    "Brett",
-    "Kane"
+  {
+    question: "Who was the first to die in Alien",
+    answers: {
+      a: "Parker",
+      b: "Brett",
+      c: "Kane",
+    },
+    correctAnswer: "Kane",
   },
-  correctAnswer: "Kane"
-},
-{
-  question: "Who directed Aliens?",
-  answers: {
-    "Tim Burton",
-    "James Cameron",
-    "Ridley Scott"
+  {
+    question: "Who directed Aliens?",
+    answers: {
+      a: "Tim Burton",
+      b: "James Cameron",
+      c: "Ridley Scott",
+    },
+    correctAnswer: "James Cameron",
   },
-  correctAnswer: "James Cameron"
-},
-{
-  question: "What is the androids name in Alien 4",
-  answers: {
-    "David",
-    "Bishop",
-    "Call"
+  {
+    question: "What is the androids name in Alien 4",
+    answers: {
+      a: "David",
+      b: "Bishop",
+      c: "Call",
+    },
+    correctAnswer: "Call",
   },
-  correctAnswer: "Call"
-},
-{
-  question: "Which character did Bill Paxton play?",
-  answers: {
-    "Hicks",
-    "Hudson",
-    "Gorman"
+  {
+    question: "Which character did Bill Paxton play?",
+    answers: {
+      a: "Hicks",
+      b: "Hudson",
+      c: "Gorman",
+    },
+    correctAnswer: "Hudson",
   },
-  correctAnswer: "Hudson"
-},
-{
-  question: "What gift did Ellen give to the Queen in Alien 4",
-  answers: {
-    "Immortality",
-    "Birth",
-    "Speech"
+  {
+    question: "What gift did Ellen give to the Queen in Alien 4",
+    answers: {
+      a: "Immortality",
+      b: "Birth",
+      c: "Speech",
+    },
+    correctAnswer: "Birth",
   },
-  correctAnswer: "Birth"
-},
-{
-  question: "Who designed the creature Xenomorph?",
-  answers: {
-    "Claude Monet",
-    "H.R.Giger",
-    "Pueblo Picos"
+  {
+    question: "Who designed the creature Xenomorph?",
+    answers: {
+      a: "Claude Monet",
+      b: "H.R.Giger",
+      c: "Pueblo Picos",
+    },
+    correctAnswer: "H.R.Giger",
   },
-  correctAnswer: "H.R.Giger"
-}
-]
+];
+
+// next button for question
+const nextButton = document.getElementById("next");
+
+// event listeners for button and clicks
+submitButton.addEventListener("click", getAnwers);
