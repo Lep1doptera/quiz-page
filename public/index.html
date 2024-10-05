@@ -4,26 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <title>Alien Quiz</title>
   </head>
   <body>
     <!--Top image-->
-    <img src="src\alien-header-840x480.jpg" />
+    <img src="\alien-header-840x480.jpg" />
     <!--Title of page-->
     <h1>Alien Universe Quiz</h1>
-    <!--Summary of page-->
-    <p>Test your knowledge with this short quiz!</p>
 
-    <div id="quiz">
-      <!--Button link to start Quiz-->
-      <button id="submit">Start</button>
-    </div>
-
-    <div id="results">
-      <!--Results-->
-    </div>
-
-    <script src="app.js"></script>
+    <div id="root"></div>
   </body>
 
   <!-- footer with name-->
