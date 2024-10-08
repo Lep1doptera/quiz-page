@@ -7,7 +7,7 @@ function App() {
   const [started, setStarted] = useState(false);
   const completed = false;
 
-  console.log("hi");
+  //console.log("hi");
   if (!started) {
     return <StartComponent setStarted={setStarted} />;
   }
@@ -22,25 +22,82 @@ function App() {
 const StartComponent = ({ setStarted }) => {
   return (
     <button
-      id="submit"
+      id="begin"
       onClick={() => {
         setStarted(true);
       }}
     >
-      Start
+      Let's get started!
     </button>
   );
 };
 
 const QuizComponent = () => {
-  return <div id="quiz">text</div>;
+  function BuildQuestion() {
+    /*render questions with answers from questions.js
+     
+    Wrong - must use states
+    let currentQuestionIndex = 0;
+    let currentQuestion = myQuestions[currentQuestionIndex];
+    let questionNumber = currentQuestionIndex + 1;*/
+
+    let [index, setIndex] = useState(0);
+    let [question, setQuestion] = useState(myQuestions[index]);
+
+    // After render, check all questions have been answered to go to results
+    if (myQuestions.correctAnswer < myQuestions.question.length) {
+      return ResultsComponent();
+      //above not correct - mainly for logic
+    } else {
+      return StartComponent;
+      //above not correct - mainly for logic
+    }
+  }
+
+  return (
+    <div id="quiz">
+      <h1>{myQuestions.question}</h1>
+      <button>test{myQuestions.a}</button>
+      <button>test{myQuestions.b}</button>
+      <button>test{myQuestions.c}</button>
+      <button
+        id="next"
+        onClick={() => {
+          //go to next question
+        }}
+      >
+        Next Question
+      </button>
+    </div>
+  );
 };
 
 function ResultsComponent() {
-  return <div id="results">Results</div>;
+  let answerScore = 0;
+  // look into classList.add
+  if (myQuestions.answerCorrect) {
+    //answerScore++ add to score
+  }
+
+  //getAnswer function to retrieve answerScore and render
+
+  return (
+    <div id="results">
+      Test ResultsComponent - You got {answerScore} correct!
+      <button
+        id="retake"
+        onClick={() => {
+          //go back to startcomponent
+        }}
+      >
+        Retake Quiz
+      </button>
+    </div>
+  );
 }
 
-/*Pseudo Code
+/*Pseudo Code 
+
 -From Index page to Quiz page
 1   Ready button > if clicked will reload page to go to Quiz page
 
@@ -78,14 +135,14 @@ Concerns
     -method of answer return, between end of quiz or after it's answerd
 
 
-*/
+
 
 //will hold questions
-const quizContainer = document.getElementById("quiz");
+//const quizContainer = document.getElementById("quiz");
 //submit button for triggers
-const submitButton = document.getElementById("submit");
+//const submitButton = document.getElementById("submit");
 //will hold checking and retrieving questions
-const resultsContainer = document.getElementById("results");
+//const resultsContainer = document.getElementById("results");
 
 //functionality
 function buildQuiz() {}
@@ -100,5 +157,6 @@ const nextButton = document.getElementById("next");
 
 // event listeners for button and clicks
 //submitButton.addEventListener("click", getAnwers);
+*/
 
 export default App;
