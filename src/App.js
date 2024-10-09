@@ -5,18 +5,18 @@ import { useState } from "react";
 
 function App() {
   const [started, setStarted] = useState(false);
-  const completed = false;
+  const [completed, setCompleted] = useState(false);
 
   //console.log("hi");
   if (!started) {
     return <StartComponent setStarted={setStarted} />;
   }
 
-  if (completed) {
-    return <ResultsComponent />;
+  if (!completed) {
+    return <QuizComponent setCompleted={setCompleted} />;
   }
 
-  return <QuizComponent />;
+  return <ResultsComponent />;
 }
 
 const StartComponent = ({ setStarted }) => {
@@ -32,7 +32,7 @@ const StartComponent = ({ setStarted }) => {
   );
 };
 
-const QuizComponent = () => {
+const QuizComponent = ({ setCompleted }) => {
   function BuildQuestion() {
     /*render questions with answers from questions.js
      
@@ -41,7 +41,6 @@ const QuizComponent = () => {
     let currentQuestion = myQuestions[currentQuestionIndex];
     let questionNumber = currentQuestionIndex + 1;*/
 
-    let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(myQuestions[index]);
 
     // After render, check all questions have been answered to go to results
@@ -54,19 +53,40 @@ const QuizComponent = () => {
     }
   }
 
+  const [index, setIndex] = useState(0);
+  const currentQuestion = myQuestions[index];
+
   return (
     <div id="quiz">
-      <h1>{myQuestions.question}</h1>
-      <button>test{myQuestions.a}</button>
-      <button>test{myQuestions.b}</button>
-      <button>test{myQuestions.c}</button>
+      <h1>{currentQuestion.question}</h1>
       <button
-        id="next"
         onClick={() => {
-          //go to next question
+          //if myQuestions length is less than the new index, we have completed
+          // We will check to make sure that the next (index + 1) index is less than the last accessible array element (length - 1)
+          // This is because the length will always be 1 more than the accessible elements since accessing elements starts at 0.
+          if (myQuestions.length - 1 < index + 1) {
+            setCompleted(true);
+          } else {
+            //otherwise we can increment the index
+            setIndex(index + 1);
+          }
         }}
       >
-        Next Question
+        {currentQuestion.answers.a}
+      </button>
+      <button
+        onClick={() => {
+          setIndex(index + 1);
+        }}
+      >
+        {currentQuestion.answers.b}
+      </button>
+      <button
+        onClick={() => {
+          setIndex(index + 1);
+        }}
+      >
+        {currentQuestion.answers.c}
       </button>
     </div>
   );
