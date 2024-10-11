@@ -1,4 +1,4 @@
-import "./App.css";
+import {} from "./index.css";
 import { myQuestions } from "./questions";
 import { useState } from "react";
 
@@ -27,7 +27,7 @@ function App() {
     );
   }
 
-  return <ResultsComponent answerScore={answerScore} reset={resetQuiz} />;
+  return <ResultsComponent answerScore={answerScore} resetQuiz={resetQuiz} />;
 }
 
 const StartComponent = ({ setStarted }) => {
