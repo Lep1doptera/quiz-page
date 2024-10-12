@@ -1,4 +1,4 @@
-import {} from "./index.css";
+import "./index.css";
 import { myQuestions } from "./questions";
 import { useState } from "react";
 
@@ -38,7 +38,7 @@ const StartComponent = ({ setStarted }) => {
         setStarted(true);
       }}
     >
-      Let's get started!
+      Initialize
     </button>
   );
 };

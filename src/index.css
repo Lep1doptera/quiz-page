@@ -6,7 +6,7 @@
 }
 
 body {
-  margin-top: 40px;
+  margin-top: 45px;
   color: rgb(255, 255, 97);
   font-family: sans-serif;
   background-color: black;
@@ -16,9 +16,15 @@ body {
 #pageTitle {
   font-family: "Noto Sans", sans-serif;
   font-weight: 200;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   color: rgb(199, 255, 94);
   font-size: 3rem;
+}
+
+#results {
+  color: rgb(255, 255, 97);
+  font-size: 1.5rem;
+  display: grid;
 }
 
 #root {
@@ -26,11 +32,10 @@ body {
   padding: 2rem;
 }
 
-
 button {
   color: rgb(180, 233, 83);
   background-color: rgba(131, 131, 128, 40%);
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   border-radius: 5px;
   border-color: grey;
   font-size: 1.5rem;
