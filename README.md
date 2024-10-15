@@ -1,6 +1,7 @@
 # quiz-page
 
 This Quiz page has 10 Alien themed questions on an interactive website utilizing React with Jest testing to ensure the integrity of the app.
+This is a beginner project to learn React and testing.
 
 # Getting Started with Create React App
 
