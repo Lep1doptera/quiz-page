@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
       crossorigin
@@ -13,18 +12,21 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <title>Alien Quiz</title>
   </head>
   <body>
     <!--Top image-->
-    <img src="\alien-header-840x480.jpg" />
+    <img id="egg" src="\alien-header-840x480.jpg" />
     <!--Title of page-->
-    <h1>Alien Universe Quiz</h1>
+    <h1 id="pageTitle">Alien Universe Quiz</h1>
 
     <div id="root"></div>
   </body>
-
-  <!-- footer with name-->
-  <p>Created by Amanda</p>
+  <footer>
+    <!-- footer with name-->
+    <p>Created by Amanda</p>
+  </footer>
 </html>
